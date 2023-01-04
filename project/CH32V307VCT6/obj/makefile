@@ -53,7 +53,7 @@ all: CH32V307VCT6.elf secondary-outputs
 
 # 工具调用
 CH32V307VCT6.elf: $(OBJS) $(USER_OBJS)
-	@	@	riscv-none-embed-gcc -march=rv32imafcxw -mabi=ilp32f -msmall-data-limit=8 -msave-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -fsingle-precision-constant -Wunused -Wuninitialized  -g -T "E:\Desktop\单车\project\CH32V307VCT6\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"CH32V307VCT6.map" --specs=nano.specs --specs=nosys.specs  -o "CH32V307VCT6.elf" $(OBJS) $(USER_OBJS) $(LIBS) -lprintfloat
+	@	@	riscv-none-embed-gcc -march=rv32imafcxw -mabi=ilp32f -msmall-data-limit=8 -msave-restore -Os -fmessage-length=0 -fsigned-char -ffunction-sections -fdata-sections -fno-common -fsingle-precision-constant -Wunused -Wuninitialized  -g -T "E:\Desktop\Bicycle\FOC_EKF\project\CH32V307VCT6\Ld\Link.ld" -nostartfiles -Xlinker --gc-sections -Wl,-Map,"CH32V307VCT6.map" --specs=nano.specs --specs=nosys.specs  -o "CH32V307VCT6.elf" $(OBJS) $(USER_OBJS) $(LIBS) -lprintfloat
 	@	@
 CH32V307VCT6.hex: CH32V307VCT6.elf
 	@	riscv-none-embed-objcopy -O ihex "CH32V307VCT6.elf"  "CH32V307VCT6.hex"
